@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class ManikinAligner : MonoBehaviour
 {
-    [Header("References")]
-    public Transform head;                 // CenterEyeAnchor
-    public GameObject virtualManikinMesh;  // Ghost mesh (can be semi-transparent)
-    public GameObject lockUI;              // Canvas (UI button root)
-
-    [Header("Alignment Settings")]
-    public Vector3 headOffset = new Vector3(0f, -0.6f, 0.4f);
+    [Header("Alignment")]
+    public Transform head;
+    public Vector3 headOffset = new Vector3(0f, -0.6f, 0.2f);
 
     private bool isLocked = false;
 
@@ -31,9 +27,9 @@ public class ManikinAligner : MonoBehaviour
 
     void LateUpdate()
     {
-        if (isLocked) return;
+        if (isLocked || head == null) return;
 
-        // Keep mannequin upright (no head tilt)
+        // Keep upright, follow head yaw only
         Vector3 flatForward = Vector3.ProjectOnPlane(head.forward, Vector3.up);
         if (flatForward.sqrMagnitude > 0.01f)
         {
@@ -47,18 +43,21 @@ public class ManikinAligner : MonoBehaviour
 
         isLocked = true;
 
-        // Detach from head so it stops moving
+        // Preserve world transform
+        Vector3 worldPos = transform.position;
+        Quaternion worldRot = transform.rotation;
+
         transform.SetParent(null);
+        transform.position = worldPos;
+        transform.rotation = worldRot;
 
-        // Hide ghost mesh
-        if (virtualManikinMesh != null)
-            virtualManikinMesh.SetActive(false);
+        Debug.Log("Manikin alignment LOCKED");
+    }
 
-        // Hide UI
-        if (lockUI != null)
-            lockUI.SetActive(false);
-
-        Debug.Log("Manikin alignment locked");
+    public void LockAlignment(bool isOn)
+    {
+        if (!isOn) return;
+        LockAlignment();
     }
 
     public bool IsLocked()
