@@ -4,7 +4,7 @@ public class ManikinAligner : MonoBehaviour
 {
     [Header("Alignment")]
     public Transform head;
-    public Vector3 headOffset = new Vector3(0f, -0.6f, 0.2f);
+    public Vector3 headOffset = new Vector3(0f, -0.6f, -0.6f);
 
     private bool isLocked = false;
 
@@ -64,4 +64,20 @@ public class ManikinAligner : MonoBehaviour
     {
         return isLocked;
     }
+
+    public void UnlockAlignment()
+{
+    if (!isLocked) return;
+
+    isLocked = false;
+
+    if (head != null)
+    {
+        transform.SetParent(head);
+        transform.localPosition = headOffset;
+        transform.localRotation = Quaternion.identity;
+    }
+
+    Debug.Log("Manikin alignment UNLOCKED");
+}
 }
