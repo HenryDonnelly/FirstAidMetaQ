@@ -5,6 +5,10 @@ using System.Collections.Generic;
 
 public class CompressionCounter : MonoBehaviour
 {
+
+    [Header("Session")]
+    public CPRSession sessionManager; 
+
     [Header("Compression Count")]
     public int compressionCount = 0;
 
@@ -12,12 +16,19 @@ public class CompressionCounter : MonoBehaviour
     public TextMeshProUGUI compressionText;
     public Image speedBarFill;
 
+    [Header("Rate UI")]
+    public TextMeshProUGUI compressionRate;
+
+
     [Header("Speed Settings")]
     public float targetCPM = 100f;
-    public int samplesForAverage = 5;
+    public int samplesForAverage = 6;
+    public float smoothingSpeed = 5f;   // Higher = smoother
 
     private List<float> compressionIntervals = new List<float>();
     private float lastCompressionTime = -1f;
+
+    private float currentDisplayedCPM = 0f;
 
     void Start()
     {
@@ -30,58 +41,88 @@ public class CompressionCounter : MonoBehaviour
         UpdateLiveSpeed();
     }
 
-    public void AddCompression(bool isOn)
-    {
-        if (!isOn) return;
-        AddCompression();
-    }
-
     public void AddCompression()
+{
+    if (sessionManager != null && !sessionManager.IsSessionActive())
+        return;
+
+    compressionCount++;
+    UpdateText();
+
+    float now = Time.time;
+
+    if (lastCompressionTime > 0f)
     {
-        compressionCount++;
-        UpdateText();
+        float interval = now - lastCompressionTime;
 
-        float now = Time.time;
+        compressionIntervals.Add(interval);
 
-        if (lastCompressionTime > 0f)
-        {
-            float interval = now - lastCompressionTime;
-            compressionIntervals.Add(interval);
-
-            if (compressionIntervals.Count > samplesForAverage)
-                compressionIntervals.RemoveAt(0);
-        }
-
-        lastCompressionTime = now;
+        if (compressionIntervals.Count > samplesForAverage)
+            compressionIntervals.RemoveAt(0);
     }
 
-    void UpdateLiveSpeed()
+    lastCompressionTime = now;
+}
+
+public void ResetSessionData()
+{
+    compressionCount = 0;
+    compressionIntervals.Clear();
+    lastCompressionTime = -1f;
+    currentDisplayedCPM = 0f;
+
+    UpdateText();
+    UpdateSpeedBar(0f);
+
+    if (compressionRate != null)
+        compressionRate.text = "Compression Rate: 0 CPM";
+}
+
+
+
+void UpdateLiveSpeed()
+{
+    if (compressionIntervals.Count == 0)
     {
-        if (lastCompressionTime <= 0f || compressionIntervals.Count == 0)
-        {
-            UpdateSpeedBar(0f);
-            return;
-        }
+        SmoothSpeed(0f);
 
-        float timeSinceLast = Time.time - lastCompressionTime;
+        if (compressionRate != null)
+            compressionRate.text = "Compression Rate: 0 CPM";
 
-        // If user stopped pressing, gradually drop bar
-        if (timeSinceLast > 2f)
-        {
-            UpdateSpeedBar(0f);
-            return;
-        }
+        return;
+    }
 
-        float avgInterval = 0f;
-        foreach (float t in compressionIntervals)
-            avgInterval += t;
+    // Calculate average interval
+    float avgInterval = 0f;
+    foreach (float t in compressionIntervals)
+        avgInterval += t;
 
-        avgInterval /= compressionIntervals.Count;
+    avgInterval /= compressionIntervals.Count;
 
-        float currentCPM = 60f / avgInterval;
+    // Convert to CPM
+    float rawCPM = 60f / avgInterval;
 
-        float normalized = Mathf.Clamp01(currentCPM / targetCPM);
+    // Clamp to realistic CPR range
+    rawCPM = Mathf.Clamp(rawCPM, 0f, 160f);
 
+    // Update UI TEXT (live number)
+    if (compressionRate != null)
+        compressionRate.text = "Compression Rate: " + Mathf.RoundToInt(rawCPM) + " CPM";
+
+    SmoothSpeed(rawCPM);
+}
+
+
+    void SmoothSpeed(float targetCPMValue)
+    {
+        // Smoothly interpolate speed
+        currentDisplayedCPM = Mathf.Lerp(
+            currentDisplayedCPM,
+            targetCPMValue,
+            Time.deltaTime * smoothingSpeed
+        );
+
+        float normalized = Mathf.Clamp01(currentDisplayedCPM / targetCPM);
         UpdateSpeedBar(normalized);
     }
 
