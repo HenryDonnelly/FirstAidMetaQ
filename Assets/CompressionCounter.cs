@@ -6,8 +6,8 @@ using System.Collections.Generic;
 public class CompressionCounter : MonoBehaviour
 {
 
-    [Header("Session")]
-    public CPRSession sessionManager; 
+    [Header("Sessions")]
+    public CPRSession[] sessionManagers;
 
     [Header("Compression Count")]
     public int compressionCount = 0;
@@ -43,7 +43,18 @@ public class CompressionCounter : MonoBehaviour
 
     public void AddCompression()
 {
-    if (sessionManager != null && !sessionManager.IsSessionActive())
+    bool anySessionActive = false;
+
+    foreach (CPRSession session in sessionManagers)
+    {
+        if (session != null && session.IsSessionActive())
+        {
+            anySessionActive = true;
+            break;
+        }
+    }
+
+    if (!anySessionActive)
         return;
 
     compressionCount++;
