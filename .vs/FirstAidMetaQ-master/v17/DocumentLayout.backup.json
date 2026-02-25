@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\QuitApplication.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\QuitApplication.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRvidController.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\CPRvidController.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CompressionCounter.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\CompressionCounter.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\HandCompression.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\HandCompression.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRSession.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\CPRSession.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HandCompression.cs",
-              "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\HandCompression.cs",
-              "RelativeDocumentMoniker": "Assets\\HandCompression.cs",
-              "ToolTip": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\HandCompression.cs",
-              "RelativeToolTip": "Assets\\HandCompression.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "QuitApplication.cs",
+              "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\QuitApplication.cs",
+              "RelativeDocumentMoniker": "Assets\\QuitApplication.cs",
+              "ToolTip": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\QuitApplication.cs",
+              "RelativeToolTip": "Assets\\QuitApplication.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T04:50:27.88Z",
+              "WhenOpened": "2026-02-24T05:26:02.542Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "CPRvidController.cs",
+              "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRvidController.cs",
+              "RelativeDocumentMoniker": "Assets\\CPRvidController.cs",
+              "ToolTip": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRvidController.cs",
+              "RelativeToolTip": "Assets\\CPRvidController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T21:30:38.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CPRSession.cs",
+              "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRSession.cs",
+              "RelativeDocumentMoniker": "Assets\\CPRSession.cs",
+              "ToolTip": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRSession.cs",
+              "RelativeToolTip": "Assets\\CPRSession.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T21:06:48.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CompressionCounter.cs",
               "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CompressionCounter.cs",
               "RelativeDocumentMoniker": "Assets\\CompressionCounter.cs",
               "ToolTip": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CompressionCounter.cs",
               "RelativeToolTip": "Assets\\CompressionCounter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T20:34:41.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T20:34:41.114Z"
             }
           ]
         }
