@@ -1,30 +1,41 @@
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class CPRVidController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public GameObject videoPanel;
+    public RawImage videoScreen;
 
     void Start()
     {
+        SetVideoVisible(false);
         videoPlayer.loopPointReached += OnVideoFinished;
     }
 
     public void PlayVideo()
     {
-        videoPanel.SetActive(true);
+        SetVideoVisible(true);
+        videoPlayer.time = 0;
         videoPlayer.Play();
     }
 
     public void StopVideo()
     {
         videoPlayer.Stop();
-        videoPanel.SetActive(false);
+        SetVideoVisible(false);
     }
 
     void OnVideoFinished(VideoPlayer vp)
     {
-        videoPanel.SetActive(false);
+        SetVideoVisible(false);
+    }
+
+    void SetVideoVisible(bool visible)
+    {
+        Color c = videoScreen.color;
+        c.a = visible ? 1f : 0f;
+        videoScreen.color = c;
     }
 }

@@ -12,6 +12,9 @@ public class CPRSession : MonoBehaviour
     public CompressionCounter compressionCounter;
     public TextMeshProUGUI sessionStatusText;
 
+    [Header("UI")]
+    public GameObject curvedUnityCanvas;
+
     private bool sessionActive = false;
     private bool sessionRunning = false;
 
@@ -44,6 +47,9 @@ public class CPRSession : MonoBehaviour
         // Start session
         sessionActive = true;
 
+        if (curvedUnityCanvas != null)
+            curvedUnityCanvas.SetActive(false);
+
         if (sessionStatusText != null)
             sessionStatusText.text = "CPR IN PROGRESS";
 
@@ -62,6 +68,9 @@ public class CPRSession : MonoBehaviour
         // End session
         sessionActive = false;
         sessionRunning = false;
+
+        if (curvedUnityCanvas != null)
+            curvedUnityCanvas.SetActive(true);
 
         if (sessionStatusText != null)
             sessionStatusText.text = "SESSION COMPLETE";
