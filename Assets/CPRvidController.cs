@@ -27,6 +27,38 @@ public class CPRVidController : MonoBehaviour
         SetVideoVisible(false);
     }
 
+    public void PauseVideo()
+    {
+        if (videoPlayer.isPlaying)
+            videoPlayer.Pause();
+    }
+
+    public void ResumeVideo()
+    {
+        if (!videoPlayer.isPlaying)
+            videoPlayer.Play();
+    }
+
+    public void Rewind10()
+    {
+        double newTime = videoPlayer.time - 10.0;
+
+        if (newTime < 0)
+            newTime = 0;
+
+    videoPlayer.time = newTime;
+    }
+
+    public void FastForward10()
+    {
+        double newTime = videoPlayer.time + 10.0;
+
+        if (newTime > videoPlayer.length)
+            newTime = videoPlayer.length - 0.1;
+
+        videoPlayer.time = newTime;
+    }
+
     void OnVideoFinished(VideoPlayer vp)
     {
         SetVideoVisible(false);
