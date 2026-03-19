@@ -66,8 +66,9 @@ public class CPRVidController : MonoBehaviour
 
     void SetVideoVisible(bool visible)
     {
-        Color c = videoScreen.color;
-        c.a = visible ? 1f : 0f;
-        videoScreen.color = c;
+        CanvasGroup cg = videoPanel.GetComponent<CanvasGroup>();
+        cg.alpha = visible ? 1f : 0f;
+        cg.interactable = visible;
+        cg.blocksRaycasts = visible;
     }
 }
