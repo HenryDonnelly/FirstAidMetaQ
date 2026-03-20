@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\CPRvidController.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\ThemeToggleController.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\ThemeToggleController.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRSession.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\CPRSession.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -30,11 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "ThemeToggleController.cs",
+              "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\ThemeToggleController.cs",
+              "RelativeDocumentMoniker": "Assets\\ThemeToggleController.cs",
+              "ToolTip": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\ThemeToggleController.cs",
+              "RelativeToolTip": "Assets\\ThemeToggleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T03:37:44.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "BPMScript.cs",
               "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\BPMScript.cs",
               "RelativeDocumentMoniker": "Assets\\BPMScript.cs",
@@ -46,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "QuitApplication.cs",
               "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\QuitApplication.cs",
               "RelativeDocumentMoniker": "Assets\\QuitApplication.cs",
@@ -64,14 +81,14 @@
               "RelativeDocumentMoniker": "Assets\\CPRvidController.cs",
               "ToolTip": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRvidController.cs",
               "RelativeToolTip": "Assets\\CPRvidController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-20T21:30:38.331Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CPRSession.cs",
               "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CPRSession.cs",
               "RelativeDocumentMoniker": "Assets\\CPRSession.cs",
@@ -83,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CompressionCounter.cs",
               "DocumentMoniker": "C:\\Users\\FiercePC\\FirstAidMetaQ-master\\FirstAidMetaQ-master\\Assets\\CompressionCounter.cs",
               "RelativeDocumentMoniker": "Assets\\CompressionCounter.cs",
