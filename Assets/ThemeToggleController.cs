@@ -16,11 +16,11 @@ public class ThemeToggleController : MonoBehaviour
     {
         if (isOn)
         {
-            themeManager.ApplyTheme(1);
+            themeManager.ApplyTheme(0);
         }
         else
         {
-            themeManager.ApplyTheme(0);
+            themeManager.ApplyTheme(1);
         }
     }
 }
