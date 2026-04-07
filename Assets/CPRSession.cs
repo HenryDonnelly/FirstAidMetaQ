@@ -69,6 +69,8 @@ public class CPRSession : MonoBehaviour
         sessionActive = false;
         sessionRunning = false;
 
+        compressionCounter.ShowFeedback();
+
         if (curvedUnityCanvas != null)
             curvedUnityCanvas.SetActive(true);
 

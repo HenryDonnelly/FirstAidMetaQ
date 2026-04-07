@@ -19,6 +19,10 @@ public class CompressionCounter : MonoBehaviour
     [Header("Rate UI")]
     public TextMeshProUGUI compressionRate;
 
+    [Header("Feedback UI")]
+    public GameObject feedbackPanel;
+    public TextMeshProUGUI feedbackText;
+
 
     [Header("Speed Settings")]
     public float targetCPM = 100f;
@@ -34,6 +38,9 @@ public class CompressionCounter : MonoBehaviour
     {
         UpdateText();
         UpdateSpeedBar(0f);
+
+        if (feedbackPanel != null)
+        feedbackPanel.SetActive(false);
     }
 
     void Update()
@@ -147,5 +154,30 @@ void UpdateLiveSpeed()
     {
         if (speedBarFill != null)
             speedBarFill.fillAmount = value;
+    }
+    
+    public void ShowFeedback()
+    {
+        if (feedbackPanel != null)
+            feedbackPanel.SetActive(true);
+
+        if (feedbackText == null) return;
+
+        if (compressionCount < 80)
+        {
+            feedbackText.text = "Too few compressions.\nPush faster and maintain rhythm.";
+        }
+        else if (compressionCount < 100)
+        {
+            feedbackText.text = "Good effort.\nTry to reach at least 100 compressions.";
+        }
+        else if (compressionCount <= 120)
+        {
+            feedbackText.text = "Excellent!\nPerfect compression rate.";
+        }
+        else
+        {
+            feedbackText.text = "Too fast.\nSlow down slightly for optimal CPR.";
+        }
     }
 }

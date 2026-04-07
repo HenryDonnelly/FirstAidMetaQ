@@ -10,6 +10,7 @@ public class ThemeToggleController : MonoBehaviour
     void Start()
     {
         toggle.onValueChanged.AddListener(OnToggleChanged);
+        OnToggleChanged(toggle.isOn);
     }
 
     void OnToggleChanged(bool isOn)
